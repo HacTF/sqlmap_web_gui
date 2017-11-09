@@ -1,0 +1,209 @@
+/*
+头部样式开始
+ */
+.divhead
+{
+height:30px;
+width:100%;
+}
+.ps
+{
+	font-size:10px;
+}
+
+#sqlmapath
+{
+width:300px;
+}
+#sqli2
+{
+	width: 280px;
+}
+#readfile2
+{
+	width: 280px;
+}
+
+/*
+主题部分样式开始
+ */
+.divbody
+{
+height:410px;
+width:100%;
+}
+.divbody1
+{
+height:400px;
+width:99%;
+}
+.divbody1 fieldset
+{
+	border: 1px #cccccc solid;
+}
+.no0
+{
+	height: 120px;
+	width: 97.3%;
+}
+.divbody1 table tr td
+{
+	font-size:14px;
+}
+.divbody2 table tr td
+{
+	font-size:14px;
+}
+.divbody2
+{
+height:280px;
+width:99%;
+}
+.no1
+{
+	height: 50px;
+	width: 97.3%;
+}
+.no2
+{
+	height: 50px;
+	width: 97.3%;
+}
+.no3
+{
+	height: 90px;
+	width: 97.3%;
+}
+.divbody3
+{
+height:90px;
+width:100%;
+}
+.divbody3 textarea
+{
+width:75%;
+height:70px;
+float:left;
+}
+.divbody3 button
+{
+	width: 70px;
+	height:50px;
+	margin-top: 12px;
+	margin-left: 20px;
+}
+#proxyurl
+{
+	width:150px;
+}
+#proxyport
+{
+	width:40px;
+}
+#proxyuser
+{
+	width: 120px;
+}
+#proxypass
+{
+	width: 120px;
+}
+#torport
+{
+	width: 40px;
+}
+#vulnp
+{
+	width:80px;
+}
+#unioncols1
+{
+	width: 30px;
+}
+#unioncols2
+{
+	width: 30px;
+}
+#unionchar2
+{
+	width:100px;
+}
+#regread2
+{
+	width:200px;
+}
+#regwrite2
+{
+	width:200px;
+}
+#regwrite5
+{
+	width:80px;
+}
+#sqlquery2
+{
+	width:400px;
+}
+#cmd2
+{
+	width: 400px;
+}
+#sqlip2
+{
+	width: 50px;
+}
+#prefix2
+{
+	width:80px;
+}
+#suffix2
+{
+	width:80px;
+}
+#readfile2
+{
+	width: 290px;
+}
+#databasename2
+{
+	width: 70px;
+}
+#tablename2
+{
+	width: 70px;
+}
+#columnsname2
+{
+	width: 70px;
+}
+#readserverfile2
+{
+	width:200px;
+}
+#filewritelocal2
+{
+	width: 200px;
+}
+#filewrite2
+{
+	width: 200px;
+}
+#search2
+{
+	width: 80px;
+}
+#referer2
+{
+	width: 180px;
+}
+/*
+脚部样式开始
+ */
+.bot
+{
+	text-align: center;
+}
+.bot a
+{
+text-decoration:none;
+}

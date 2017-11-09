@@ -1,0 +1,304 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>SQLMAP Chrome</title>
+        <link rel="stylesheet" href="style.css" type="text/css" />
+	</head>
+	<body>
+    <!--头部开始-->
+	<div class="divhead">
+	sqlmap路径 ： <input type="text" id="sqlmapath" value="">&nbsp;&nbsp;&nbsp;
+    <input type="checkbox" id="sqli1">注入点 or http包 ： <input type="text" id="sqli2" value="">&nbsp;&nbsp;<span class="ps">填入注入点请带上协议名，http包请放入绝对路径</span>
+	</div>
+    <!--头部结束 主体开始-->
+	<div class="divbody">
+        <div class="divbody1">
+            <fieldset id="no0">
+            <legend>基本参数</legend>
+            <table>
+                                 <!--常用命令第一行-->
+                <tr>
+                    <td>
+                        <input type="checkbox" id="beep">发现注入时提醒
+                        <input type="checkbox" id="batch">自动化无交互
+                        <input type="checkbox" id="currentdb">获取当前数据库
+                        <input type="checkbox" id="currentuser">获取当前数据库用户
+                        <input type="checkbox" id="isdba">检查当前用户是否是管理员
+                        <input type="checkbox" id="banner">获得当前数据库标识
+                        <input type="checkbox" id="youhua">开启所有优化开关
+                        <input type="checkbox" id="dump">Dump
+                        <input type="checkbox" id="dumpall">DumpALL
+                    </td>
+                </tr>
+                                 <!--常用命令第二行-->
+                <tr>
+                    <td>
+                        <input type="checkbox" id="schema">获得所有库,表,列
+                        <input type="checkbox" id="dbs">获得所有库名
+                        <input type="checkbox" id="users">枚举数据库用户
+                        <input type="checkbox" id="privileges">枚举数据库权限 
+                        <input type="checkbox" id="roles">枚举数据库用户角色
+                        <input type="checkbox" id="tables">枚举数据库中的表
+                        <input type="checkbox" id="sysdbs">枚举表时排除系统库                       
+                        <input type="checkbox" id="commontables">检查共同存在的表
+                        <input type="checkbox" id="commoncolumns">检查共同存在的列
+                    </td>
+                </tr>
+
+                <tr>
+                                 <!--常用命令第三行-->
+                    <td>
+                        <!--线程数 下拉列表框 1至10个线程-->
+                        <p>线程：
+                        <select id="threads">
+                            <option value='1'>1</option>
+                            <option value='2'>2</option>
+                            <option value='3'>3</option>
+                            <option value='4'>4</option>
+                            <option value='5'>5</option>
+                            <option value='6'>6</option>
+                            <option value='7'>7</option>
+                            <option value='8'>8</option>
+                            <option value='9'>9</option>
+                            <option value='10'>10</option>
+                        </select>
+
+                        <!--等级数 下拉列表框 1至5个等级-->
+                        level：
+                        <select id="level">
+                            <option value='1'>1</option>
+                            <option value='2'>2</option>
+                            <option value='3'>3</option>
+                            <option value='4'>4</option>
+                            <option value='5'>5</option>
+                        </select>
+                        
+                        <!--风险数 下拉列表框 0至3个等级-->
+                        risk：
+                        <select id="risk">
+                            <option value='1'>1</option>
+                            <option value='2'>2</option>
+                            <option value='3'>3</option>
+                        </select>
+                        
+                        <!--sqlmap 回显详细度 下拉列表框 0至6个级别-->
+                        详细度：
+                        <select id="xiangxi">
+                            <option value='0'>0</option>
+                            <option value='1'>1</option>
+                            <option value='2'>2</option>
+                            <option value='3'>3</option>
+                            <option value='4'>4</option>
+                            <option value='5'>5</option>
+                            <option value='6'>6</option>
+                        </select>
+                        
+                         <!--超时事件 下拉列表框 2至20 秒-->
+                        超时时间：
+                        <select id="timeout">
+                            <option value='5'>5</option>
+                            <option value='10'>10</option>
+                            <option value='15'>15</option>
+                            <option value='20'>20</option>
+                            <option value='25'>25</option>
+                            <option value='30'>30</option>
+                        </select>(秒)
+                        &nbsp;
+                         <!--设置后端数据库-->
+                        <input type="checkbox" id="setdbms">指定数据库：
+                        <select id="dbms">
+                            <option value='MySQL'>MySQL</option>
+                            <option value='MySQL4'>MySQL4</option>
+                            <option value='MySQL5'>MySQL5</option>
+                            <option value='PostgreSQL'>PostgreSQL</option>
+                            <option value='mssql'>Mssql</option>
+                            <option value='Oracle'>Oracle</option>
+                            <option value='access'>access</option>
+                            <option value='SQLite'>SQLite</option>
+                            <option value='SQLite3'>SQLite3</option>
+                            <option value='firebird'>Firebird</option>
+                            <option value='Sybase'>Sybase</option>
+                            <option value='SAPMaxDB'>SAP MaxDB</option>
+                        </select>
+                            &nbsp;
+                        <!--设置后端操作系统-->
+                        <input type="checkbox" id="setos">指定操作系统：
+                        <select id="os">
+                            <option value='linux'>Linux</option>
+                            <option value='windows'>Windows</option>
+                        </select>
+                            &nbsp;
+                        <!--指定注入方式 beust--> 
+                        <input type="checkbox" id="sqlitype">指定注入方式：
+                        <select id="technique">
+                            <option value='BEUST'>BEUST</option>
+                            <option value='B'>布尔型盲注</option>
+                            <option value='E'>显错注入</option>
+                            <option value='U'>联合查询</option>
+                            <option value='S'>堆叠查询</option>
+                            <option value='T'>延时盲注</option>
+                        </select>
+                        </p>
+                    </td>
+                </tr>
+               <tr>
+                    <td>
+                        <input type="checkbox" id="sqlshell">获得sql-shell
+                        <input type="checkbox" id="cmdshell">获得cmd-shell     
+                        <input type="checkbox" id="suijiagent1">随机USER agent    
+                        <input type="checkbox" id="referer1">指定来源页： <input type="text" id="referer2">      
+                    </td>
+               </tr>
+                <!--还要加 文件上传 注册表读写 user-agent tamper插件选择等等-->
+            </table>
+
+             </fieldset>
+                         <fieldset id="no1">
+                 <legend>注册表操作</legend>
+                 <table>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="regread1">读注册表 --> Key：<input type="text" id="regread2">&nbsp;&nbsp;
+                        <input type="checkbox" id="regwrite1">写注册表 --> Key：<input type="text" id="regwrite2">
+                        Value：<input type="text" id="regwrite3">
+                        Type：<input type="text" id="regwrite4">
+                        Data：<input type="text" id="regwrite5">
+                    </td>
+                </tr>
+                </table>
+            </fieldset>
+
+            <fieldset id="no2">
+                 <legend>文件操作</legend>
+                 <table>
+                <tr>
+                     <td>
+                         <p>
+                            <input type="checkbox" id="readserverfile1">读取文件（文件路径）：<input type="text" id="readserverfile2">
+                            <input type="checkbox" id="filewritelocal1">文件写入(本地文件路径)：<input type="text" id="filewritelocal2">
+                            网站路径：<input type="text" id="filewrite3">
+                        </p>
+                     </td>  
+                </tr>
+                 </table>
+            </fieldset>
+
+            <fieldset id="no3">
+            <legend>高级设定</legend>
+            <table>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="search1">搜索
+                        <select id="search">
+                        <option value="D">库名</option>
+                        <option value="T">表名</option>
+                        <option value="C">列名</option>
+                        </select>
+                        <input type="text" id="search2">
+                        <input type="checkbox" id="databasename1">指定库名：<input type="text" id="databasename2">            
+                        <input type="checkbox" id="tablename1" >指定表名：<input type="text" id="tablename2">
+                        <input type="checkbox" id="columnsname1">指定列名：<input type="text" id="columnsname2">
+                        <input type="checkbox" id="tamper1">编码插件：
+                        <select id="tamper2">
+                        <option value="apostrophemask">apostrophemask</option>
+                        <option value="apostrophenullencode">apostrophenullencode</option>
+                        <option value="appendnullbyte">appendnullbyte</option>
+                        <option value="base64encode">base64encode</option>
+                        <option value="between">between</option>
+                        <option value="bluecoat">bluecoat</option>
+                        <option value="chardoubleencode">chardoubleencode</option>
+                        <option value="charencode">charencode</option>
+                        <option value="charunicodeencode">charunicodeencode</option>
+                        <option value="equaltolike">equaltolike</option>
+                        <option value="halfversionedmorekeywords">halfversionedmorekeywords</option>
+                        <option value="ifnull2ifisnull">ifnull2ifisnull</option>
+                        <option value="modsecurityversioned">modsecurityversioned</option>
+                        <option value="multiplespaces">multiplespaces</option>
+                        <option value="nonrecursivereplacement">nonrecursivereplacement</option>
+                        <option value="percentage">percentage</option>
+                        <option value="randomcase">randomcase</option>
+                        <option value="randomcomments">randomcomments</option>
+                        <option value="securesphere">securesphere</option>
+                        <option value="sp_password">sp_password</option> 
+                        <option value="space2comment">space2comment</option> 
+                        <option value="space2dash">space2dash</option>
+                        <option value="space2hash">space2hash</option>
+                        <option value="space2morehash">space2morehash</option>
+                        <option value="space2mssqlblank">space2mssqlblank</option>
+                        <option value="space2mssqlhash">space2mssqlhash</option>
+                        <option value="space2mysqlblank">space2mysqlblank</option>
+                        <option value="space2mysqldash">space2mysqldash</option>
+                        <option value="space2plus">space2plus</option>
+                        <option value="space2randomblank">space2randomblank</option>
+                        <option value="unionalltounion">unionalltounion</option>
+                        <option value="unmagicquotes">unmagicquotes</option>
+                        <option value="versionedkeywords">versionedkeywords</option>
+                        <option value="versionedmorekeywords">versionedmorekeywords</option>
+                        </select>
+                        <input type="submit" id="addpug" value="添加">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <p>
+                            <input type="checkbox" id="sqlip1">漏洞参数：<input type="text" id="sqlip2">
+                            <input type="checkbox" id="prefix1">注入payload前缀：<input type="text" id="prefix2"> 
+                            <input type="checkbox" id="suffix1">注入payload后缀：<input type="text" id="suffix2"> 
+                            <input type="checkbox" id="unioncols">union对列的测试范围：
+                            <input type="text" id="unioncols1"> to <input type="text" id="unioncols2">
+                            <input type="checkbox" id="unionchar1">暴力猜解列数的内容：<input type="text" id="unionchar2">
+                        </p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <input type="checkbox" id="sqlquery1">执行sql语句：<input type="text" id="sqlquery2">
+                        <input type="checkbox" id="cmd1">执行cmd命令：<input type="text" id="cmd2">
+                    </td>
+                </tr>
+
+                 <!--代理设置区   start -->
+                <tr>
+                    <td>
+                        <p>
+                            代理设置：<input type="checkbox" id="ignore">忽视代理
+                            <input type="checkbox" id="proxy">开启代理 --> url：
+                            <input type="text" id="proxyurl">&nbsp;Port：
+                            <input type="text" id="proxyport">&nbsp;User：
+                            <input type="text" id="proxyuser">&nbsp;Pass：
+                            <input type="text" id="proxypass">&nbsp;
+                            <input type="checkbox" id="TOR">TOR --> Port：
+                            <input type="text" id="torport">&nbsp;Type：
+                            <select id="tortype">
+                            <option value='HTTP'>HTTP</option>
+                            <option value='SOCKS4'>SOCKS4</option>
+                            <option value='SOCKS5'>SOCKS5</option>
+                            </select>
+                        </p>
+                    </td>
+                </tr>
+                <!--代理设置区   end -->
+            </table>
+            </fieldset>
+        </div>
+
+        <br>
+
+
+        <br>
+        <div class="divbody3">
+            <b>结果：</b><br>
+            <textarea id="jieguo"></textarea>
+            <button type="submit" leixing="shengcheng">命令生成</button>
+            <button type="submit" leixing="default">恢复默认</button>
+            <button type="submit" leixing="help">使用帮助</button>
+            <p class="bot">SqlMap GUI - APTSEC Team &nbsp;&nbsp; By：<a href="http://t.qq.com/Ox_Jin">0x_Jin</a>&nbsp;&nbsp;&nbsp;&nbsp;Blog：<a href="http://aptsec.net">APTSEC.NET</a></p>
+        </div>
+	</div>
+    
+    <!--主体结束 脚部开始-->
+    <script src="script.js"></script>
+	</body>
+</html>
